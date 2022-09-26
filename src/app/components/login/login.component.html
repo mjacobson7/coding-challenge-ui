@@ -1,0 +1,11 @@
+<section class="login">
+  <form class="login__form" [formGroup]="loginForm" (submit)="onLogin()">
+    <input
+      class="login__input"
+      placeholder="Name"
+      formControlName="name"
+      type="text"
+    />
+    <button [disabled]="loginForm.invalid" class="login__button">Login</button>
+  </form>
+</section>

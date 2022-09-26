@@ -1,0 +1,6 @@
+@font-face {
+  src: url("./fonts/Roboto-Regular.ttf") format("ttf"),
+    url("./fonts/Roboto-Regular.ttf") format("woff");
+  font-family: "Roboto";
+  font-weight: 400;
+}

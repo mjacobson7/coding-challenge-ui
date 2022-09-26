@@ -1,0 +1,29 @@
+<section class="rooms">
+  <div class="rooms__container">
+    <form class="form" (submit)="onCreateRoom()" [formGroup]="roomForm">
+      <input
+        class="form__input"
+        formControlName="name"
+        type="text"
+        placeholder="New room..."
+      />
+      <button [disabled]="!roomForm.valid" class="form__button">+</button>
+    </form>
+
+    <ul class="rooms__list" *ngFor="let room of sortBy('updated')">
+      <li
+        [ngClass]="[
+          'rooms__list-item',
+          selectedRoomId === room.id ? 'rooms__list-item_selected' : ''
+        ]"
+        (click)="onViewRoom(room.id)"
+      >
+        {{ room.name }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="rooms__room">
+    <router-outlet></router-outlet>
+  </div>
+</section>
